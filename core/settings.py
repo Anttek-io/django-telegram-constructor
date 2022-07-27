@@ -110,11 +110,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'en-us')
 
-TIME_ZONE = os.getenv('TZ', 'UTC')
+gettext = lambda s: s
 
+LANGUAGES = (
+    ('ru-ru', gettext('Russian')),
+    ('en-us', gettext('English')),
+)
 USE_I18N = True
 
+LOCALE_PATHS = (BASE_DIR / 'locale/', )
+
 USE_L10N = True
+
+TIME_ZONE = os.getenv('TZ', 'UTC')
 
 USE_TZ = True
 
