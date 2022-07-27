@@ -10,6 +10,14 @@ class TelegramUser(models.Model):
     last_name = models.CharField(max_length=64, null=True, blank=True, default=None, verbose_name=_('Last name'))
     bio = models.CharField(max_length=70, null=True, blank=True, default=None, verbose_name=_('Bio'))
     phone_number = PhoneNumberField(null=True, blank=True, default=None, verbose_name=_('Phone number'))
+    language_code = models.CharField(max_length=3, null=False, blank=False, verbose_name=_('Language code'))
+    deep_link = models.CharField(max_length=64, null=True, blank=True)
+
+    is_blocked_bot = models.BooleanField(default=False, verbose_name=_('is blocked bot'))
+    is_banned = models.BooleanField(default=False, verbose_name=_('is banned'))
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('Updated at'))
 
     class Meta:
         verbose_name = _('Telegram user')
