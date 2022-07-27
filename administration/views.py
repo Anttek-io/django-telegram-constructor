@@ -14,7 +14,6 @@ def index_view(request):
     for model, model_admin in site._registry.items():
         app_label = model._meta.app_label
         has_module_perms = user.has_module_perms(app_label)
-
         if has_module_perms:
             perms = model_admin.get_model_perms(request)
 
@@ -28,13 +27,12 @@ def index_view(request):
                     app_dict[app_label]['models'].append(model_dict)
                 else:
                     app_dict[app_label] = {
-                        'name': app_label.title(),
+                        'name': capfirst(model._meta.verbose_name_plural),
                         'app_url': app_label + '/',
                         'has_module_perms': has_module_perms,
                         'models': [model_dict],
                     }
 
-    # app_list.sort(lambda x, y: cmp(x['name'], y['name']))
     app_list = app_dict.values()
     return render(request, 'administration/index.html', context={'app_list': app_list})
 

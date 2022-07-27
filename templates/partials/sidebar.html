@@ -1,15 +1,29 @@
+{% load i18n %}
+
 <div class="vertical-menu">
 
     <div data-simplebar class="h-100">
 
-        <!--- Sidemenu -->
         <div id="sidebar-menu">
-            <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-
+                {% if app_list %}
+                    {% for app in app_list %}
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <span key="t-{{ app.admin_url }}">{{ app.name }}</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            {% for model in app.models %}
+                                <li><a href="{{ model.admin_url }}">{{ model.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <li>{% translate 'You don’t have permission to view or edit anything.' %}</li>
+                {% endif %}
             </ul>
-            {% include 'partials/app_list.html' with app_list=app_list show_changelinks=False %}
         </div>
-        <!-- Sidebar -->
+
     </div>
 </div>
