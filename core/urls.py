@@ -13,7 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.views.static import serve
@@ -24,7 +23,7 @@ from telegram_bot import urls as telegram_bot_urls
 from core import settings
 
 urlpatterns = [
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    path('media/<path:str>', serve, {'document_root': settings.MEDIA_ROOT}),
     path('', include((administration.urls, 'administration'), namespace='administration')),
     path('admin/', admin.site.urls),
     path('telegram_bot/', include(telegram_bot_urls)),

@@ -1,3 +1,4 @@
+from django.apps import apps
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django.utils.text import capfirst
@@ -10,6 +11,7 @@ def _get_app_list(request):
     user = request.user
     for model, model_admin in site._registry.items():
         app_label = model._meta.app_label
+        print(model._meta)
         has_module_perms = user.has_module_perms(app_label)
         if has_module_perms:
             perms = model_admin.get_model_perms(request)
@@ -24,7 +26,7 @@ def _get_app_list(request):
                     app_dict[app_label]['models'].append(model_dict)
                 else:
                     app_dict[app_label] = {
-                        'name': capfirst(model._meta.verbose_name_plural),
+                        'name': apps.get_app_config(app_label).verbose_name,
                         'app_url': app_label + '/',
                         'has_module_perms': has_module_perms,
                         'models': [model_dict],

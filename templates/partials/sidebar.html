@@ -1,20 +1,18 @@
 {% load i18n %}
 
 <div class="vertical-menu">
-
     <div data-simplebar class="h-100">
-
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
                 {% if app_list %}
                     {% for app in app_list %}
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <span key="t-{{ app.admin_url }}">{{ app.name }}</span>
+                            <i class="bx bx-radio-circle-marked"></i><span>{{ app.name }}</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             {% for model in app.models %}
-                                <li><a href="{{ model.admin_url }}">{{ model.name }}</a></li>
+                                <li><a href="{{ model.admin_url }}"><i class="bx bx-radio-circle"></i>{{ model.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
@@ -24,6 +22,5 @@
                 {% endif %}
             </ul>
         </div>
-
     </div>
 </div>

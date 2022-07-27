@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-27 13:26+0500\n"
+"POT-Creation-Date: 2022-07-27 16:30+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=(n != 1);\n"
 
-#: .\core\settings.py:116
+#: .\core\settings.py:117
 msgid "Russian"
 msgstr "Русский"
 
-#: .\core\settings.py:117
+#: .\core\settings.py:118
 msgid "English"
 msgstr "Английский"
 
@@ -46,10 +46,42 @@ msgstr "Био"
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: .\telegram_bot\models.py:15
-msgid "Telegram user"
-msgstr "пользователь Telegram"
+#: .\telegram_bot\models.py:13
+msgid "Language code"
+msgstr "Код языка"
 
 #: .\telegram_bot\models.py:16
-msgid "Telegram users"
-msgstr "пользователи Telegram"
+msgid "is blocked bot"
+msgstr "заблокировал бота"
+
+#: .\telegram_bot\models.py:17
+msgid "is banned"
+msgstr "забанен"
+
+#: .\telegram_bot\models.py:19
+msgid "Created at"
+msgstr "Создан"
+
+#: .\telegram_bot\models.py:20
+msgid "Updated at"
+msgstr "Последнее изменение"
+
+#: .\telegram_bot\models.py:23
+msgid "user"
+msgstr "пользователь"
+
+#: .\telegram_bot\models.py:24
+#, fuzzy
+#| msgid "Username"
+msgid "Users"
+msgstr "Пользователи"
+
+#: .\templates\partials\sidebar.html:21
+msgid "You don’t have permission to view or edit anything."
+msgstr "У вас нет разрешения на просмотр или редактирование чего-либо."
+
+#~ msgid "Telegram user"
+#~ msgstr "пользователь Telegram"
+
+#~ msgid "Telegram users"
+#~ msgstr "пользователи Telegram"
