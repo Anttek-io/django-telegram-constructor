@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.static import serve
+from telegram_bot import urls as telegram_bot_urls
 
 from core import settings
 
 urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     path('admin/', admin.site.urls),
+    path('telegram_bot/', include(telegram_bot_urls)),
 ]
