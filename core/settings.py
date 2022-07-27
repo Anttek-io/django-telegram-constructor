@@ -46,9 +46,9 @@ INSTALLED_APPS = [
     'phonenumber_field',
 
     # Local apps
-    'telegram_bot.apps.TelegramBotConfig',
-    'administration.apps.AdministrationConfig',
     'authentication.apps.AuthenticationConfig',
+    'administration.apps.AdministrationConfig',
+    'telegram_bot.apps.TelegramBotConfig',
 ]
 
 MIDDLEWARE = [
