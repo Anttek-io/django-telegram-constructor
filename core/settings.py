@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # Custom apps
     'telegram_bot.apps.TelegramBotConfig',
+    'administration.apps.AdministrationConfig',
 
     # 3rd-party apps
     'phonenumber_field'
