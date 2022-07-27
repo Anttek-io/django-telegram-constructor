@@ -11,7 +11,6 @@ def _get_app_list(request):
     user = request.user
     for model, model_admin in site._registry.items():
         app_label = model._meta.app_label
-        print(model._meta)
         has_module_perms = user.has_module_perms(app_label)
         if has_module_perms:
             perms = model_admin.get_model_perms(request)

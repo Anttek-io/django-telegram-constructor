@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import datetime
 import os
 from pathlib import Path
 
@@ -39,13 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # Custom apps
-    'telegram_bot.apps.TelegramBotConfig',
-    'administration.apps.AdministrationConfig',
+    'rest_framework',
 
     # 3rd-party apps
-    'phonenumber_field'
+    'phonenumber_field',
+
+    # Local apps
+    'telegram_bot.apps.TelegramBotConfig',
+    'administration.apps.AdministrationConfig',
+    'authentication.apps.AuthenticationConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +60,20 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = 'authentication.CustomUser'
+
+REST_AUTH_TOKEN_MODEL = 'authentication.Token'
+
+REST_FRAMEWORK = {
+    'UPLOADED_FILES_USE_URL': False,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'authentication.utils.ExpiringTokenAuthentication',
+    ],
+}
+
+REST_AUTH_TOKEN_CREATOR = "authentication.utils.custom_create_token"
+TOKEN_TTL = datetime.timedelta(hours=12)
 
 ROOT_URLCONF = 'core.urls'
 

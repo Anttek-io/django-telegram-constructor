@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.views.static import serve
 
 import administration.urls
+import authentication.urls
 from telegram_bot import urls as telegram_bot_urls
 
 from core import settings
@@ -25,6 +26,7 @@ from core import settings
 urlpatterns = [
     path('media/<path:str>', serve, {'document_root': settings.MEDIA_ROOT}),
     path('', include((administration.urls, 'administration'), namespace='administration')),
+    path('api/auth/', include((authentication.urls, 'authentication'), namespace='authentication')),
     path('admin/', admin.site.urls),
     path('telegram_bot/', include(telegram_bot_urls)),
 ]
