@@ -1,0 +1,624 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-09 14:02+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\administration\apps.py:8 .\templates\partials\sidebar.html:22
+msgid "Administration"
+msgstr "Администрирование"
+
+#: .\administration\models.py:9 .\administration\models.py:29
+#: .\templates\administration\department_detail.html:14
+#: .\templates\administration\department_list.html:23
+#: .\templates\administration\department_list.html:88
+#: .\templates\administration\position_detail.html:14
+#: .\templates\administration\position_list.html:23
+#: .\templates\administration\position_list.html:96
+msgid "Name"
+msgstr "Название"
+
+#: .\administration\models.py:11
+#: .\templates\administration\department_detail.html:18
+#: .\templates\administration\department_list.html:24
+msgid "Parent department"
+msgstr "Вышестоящий департамент"
+
+#: .\administration\models.py:14 .\authentication\models.py:44
+msgid "is active"
+msgstr "активен"
+
+#: .\administration\models.py:15 .\administration\models.py:35
+#: .\administration\models.py:60
+msgid "created at"
+msgstr "дата и время создания"
+
+#: .\administration\models.py:16 .\administration\models.py:36
+#: .\administration\models.py:61
+msgid "updated at"
+msgstr "последнее изменение"
+
+#: .\administration\models.py:17
+msgid "deleted"
+msgstr "удален"
+
+#: .\administration\models.py:18 .\administration\models.py:38
+#: .\authentication\models.py:47
+msgid "deleted at"
+msgstr "дата и время удаления"
+
+#: .\administration\models.py:21
+msgid "department"
+msgstr "департамент"
+
+#: .\administration\models.py:22
+msgid "departments"
+msgstr "департаменты"
+
+#: .\administration\models.py:31
+#: .\templates\administration\position_detail.html:18
+#: .\templates\administration\position_list.html:24
+msgid "Parent position"
+msgstr "Вышестоящая должность"
+
+#: .\administration\models.py:32
+msgid "is head position"
+msgstr "Руководящая должность"
+
+#: .\administration\models.py:34
+msgctxt "Женский род"
+msgid "is active"
+msgstr "активна"
+
+#: .\administration\models.py:37
+msgctxt "Женский род"
+msgid "deleted"
+msgstr "удалена"
+
+#: .\administration\models.py:41
+msgid "position"
+msgstr "должность"
+
+#: .\administration\models.py:42
+msgid "positions"
+msgstr "должности"
+
+#: .\administration\models.py:49 .\authentication\models.py:73
+msgid "User"
+msgstr "Пользователь"
+
+#: .\administration\models.py:51
+msgid "Department"
+msgstr "Департамент"
+
+#: .\administration\models.py:53
+msgid "Position"
+msgstr "Должность"
+
+#: .\administration\models.py:55
+msgid "is head"
+msgstr "руководящая должность"
+
+#: .\administration\models.py:56
+msgid "assigned by"
+msgstr "кто назначил"
+
+#: .\administration\models.py:59
+msgctxt "средний род"
+msgid "is active"
+msgstr "активно"
+
+#: .\administration\models.py:64
+msgid "employment"
+msgstr "занятость на должности"
+
+#: .\administration\models.py:65
+msgid "employments"
+msgstr "занятости на должностях"
+
+#: .\administration\views\site_views.py:65
+msgid "Department details"
+msgstr "Детали департамента"
+
+#: .\administration\views\site_views.py:162
+msgid "Position details"
+msgstr "Детали должности"
+
+#: .\authentication\admin.py:17
+msgid "Personal info"
+msgstr "Личная информация"
+
+#: .\authentication\admin.py:18
+msgid "Permissions"
+msgstr "Права доступа"
+
+#: .\authentication\admin.py:21
+msgid "Important dates"
+msgstr "Важные даты"
+
+#: .\authentication\apps.py:8
+msgid "Authentication"
+msgstr "Аутентификация"
+
+#: .\authentication\models.py:37
+#: .\templates\authentication\customuser_detail.html:14
+#: .\templates\authentication\customuser_list.html:23
+#: .\templates\authentication\customuser_list.html:72
+#: .\templates\authentication\customuser_list.html:73
+#: .\templates\authentication\login.html:64
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: .\authentication\models.py:38
+msgid "Email"
+msgstr "Почта"
+
+#: .\authentication\models.py:39
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: .\authentication\models.py:40
+#: .\templates\authentication\customuser_detail.html:18
+#: .\templates\authentication\customuser_list.html:24
+#: .\templates\authentication\customuser_list.html:76
+#: .\templates\authentication\customuser_list.html:77
+msgid "First name"
+msgstr "Имя"
+
+#: .\authentication\models.py:41
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\authentication\models.py:42
+msgid "Middle name"
+msgstr "Отчество"
+
+#: .\authentication\models.py:43
+msgid "Date joined"
+msgstr "Дата присоединения"
+
+#: .\authentication\models.py:45
+msgid "is staff"
+msgstr "пользователь админки"
+
+#: .\authentication\models.py:46
+msgctxt "Мужской род"
+msgid "deleted"
+msgstr "удален"
+
+#: .\authentication\models.py:55 .\logger\models.py:42
+msgid "user"
+msgstr "пользователь"
+
+#: .\authentication\models.py:56 .\templates\partials\sidebar.html:27
+msgid "Users"
+msgstr "Пользователи"
+
+#: .\authentication\models.py:66
+msgid "Full name"
+msgstr "ФИО"
+
+#: .\authentication\models.py:70
+msgid "Key"
+msgstr "Ключ"
+
+#: .\authentication\models.py:75
+msgid "Created"
+msgstr "Создан"
+
+#: .\authentication\models.py:76
+msgid "Last use"
+msgstr "Последнее использование"
+
+#: .\authentication\models.py:79
+msgid "Token"
+msgstr "Токен"
+
+#: .\authentication\models.py:80
+msgid "Tokens"
+msgstr "Токены"
+
+#: .\authentication\views\site_views.py:39
+msgid "Account is inactive"
+msgstr "Аккаунт не активен"
+
+#: .\authentication\views\site_views.py:41
+msgid "Wrong username or password"
+msgstr "Неверный логин или пароль"
+
+#: .\authentication\views\site_views.py:93
+msgid "User details"
+msgstr "Детали пользователя"
+
+#: .\core\settings.py:154
+msgid "Russian"
+msgstr "Русский"
+
+#: .\core\settings.py:155
+msgid "English"
+msgstr "English"
+
+#: .\incident\apps.py:8 .\incident\models.py:48
+msgid "Incident"
+msgstr "Инцидент"
+
+#: .\incident\models.py:9
+msgid "Internal"
+msgstr "Внутренний"
+
+#: .\incident\models.py:10
+msgid "External"
+msgstr "Внешний"
+
+#: .\incident\models.py:14
+msgid "Template"
+msgstr "Черновик"
+
+#: .\incident\models.py:15
+msgid "Closed"
+msgstr "Закрыт"
+
+#: .\incident\models.py:18
+msgid "Title"
+msgstr "Заголовок"
+
+#: .\incident\models.py:20
+msgid "Incident type"
+msgstr "Тип инцидента"
+
+#: .\incident\models.py:21
+msgid "Description"
+msgstr "Описание"
+
+#: .\incident\models.py:22
+msgid "Discovery date"
+msgstr "Дата выявления"
+
+#: .\incident\models.py:23
+msgid "Occurrence date"
+msgstr "Дата возникновения"
+
+#: .\incident\models.py:24
+msgid "Initial damage"
+msgstr "Первоначальный ущерб"
+
+#: .\incident\models.py:25
+msgid "Residual damage"
+msgstr "Остаточный ущерб"
+
+#: .\incident\models.py:26
+msgid "Reparations amount"
+msgstr "Сумма возмещений"
+
+#: .\incident\models.py:29
+msgid "Source department"
+msgstr "Подразделение источник"
+
+#: .\incident\models.py:31
+msgid "Source initiator"
+msgstr "Инициатор"
+
+#: .\incident\models.py:33
+msgid "Author"
+msgstr "Автор"
+
+#: .\incident\models.py:36
+msgid "The department where the incident occurred"
+msgstr "Подразделение, в котором произошел инцидент"
+
+#: .\incident\models.py:38
+msgid "Created at"
+msgstr "Дата и время создания"
+
+#: .\incident\models.py:39
+msgid "Updated at"
+msgstr "Последнее изменение"
+
+#: .\incident\models.py:40
+msgid "Deleted"
+msgstr "Удалено"
+
+#: .\incident\models.py:41
+msgid "Deleted at"
+msgstr "Дата и время удаления"
+
+#: .\incident\models.py:44
+msgid "incident"
+msgstr "инцидент"
+
+#: .\incident\models.py:45 .\templates\partials\sidebar.html:10
+msgid "Incidents"
+msgstr "Инциденты"
+
+#: .\logger\apps.py:8
+msgid "Logging"
+msgstr "Журналирование"
+
+#: .\logger\models.py:14
+msgid "Addition"
+msgstr "Создание"
+
+#: .\logger\models.py:15
+msgid "Change"
+msgstr "Изменение"
+
+#: .\logger\models.py:16
+msgid "Deletion"
+msgstr "Удаление"
+
+#: .\logger\models.py:41
+msgid "action time"
+msgstr "дата и время"
+
+#: .\logger\models.py:43
+msgid "content type"
+msgstr "тип объекта"
+
+#: .\logger\models.py:45
+msgid "object id"
+msgstr "id объекта"
+
+#: .\logger\models.py:46
+msgid "object repr"
+msgstr "представление объекта"
+
+#: .\logger\models.py:47
+msgid "action flag"
+msgstr "маркер действия"
+
+#: .\logger\models.py:54
+msgid "log entry"
+msgstr "запись в журнале"
+
+#: .\logger\models.py:55
+msgid "log entries"
+msgstr "записи в журнале"
+
+#: .\logger\models.py:63
+#, python-format
+msgid "Added “%(object)s”."
+msgstr "Добавлен объект “%(object)s”."
+
+#: .\logger\models.py:65
+#, python-format
+msgid "Changed “%(object)s”"
+msgstr "Изменен объект “%(object)s”"
+
+#: .\logger\models.py:69
+#, python-format
+msgid "Deleted “%(object)s.”"
+msgstr "Удален объект “%(object)s.”"
+
+#: .\logger\models.py:71
+msgid "LogEntry Object"
+msgstr "Объект LogEntry"
+
+#: .\templates\administration\department_detail.html:20
+msgid "No parent department"
+msgstr "Нет вышестоящего департамента"
+
+#: .\templates\administration\department_detail.html:32
+#: .\templates\administration\department_list.html:25
+msgctxt "Мужской род"
+msgid "Is active"
+msgstr "Активен"
+
+#: .\templates\administration\department_detail.html:49
+#: .\templates\administration\department_detail.html:76
+#: .\templates\administration\department_detail.html:103
+#: .\templates\administration\department_list.html:98
+#: .\templates\administration\position_detail.html:55
+#: .\templates\administration\position_detail.html:82
+#: .\templates\administration\position_detail.html:109
+#: .\templates\administration\position_list.html:106
+#: .\templates\authentication\customuser_detail.html:33
+#: .\templates\authentication\customuser_list.html:98
+#: .\templates\incident\incident_list.html:72
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\administration\department_detail.html:55
+#: .\templates\administration\department_list.html:103
+#: .\templates\administration\position_detail.html:61
+#: .\templates\administration\position_list.html:111
+#: .\templates\authentication\customuser_detail.html:39
+#: .\templates\authentication\customuser_list.html:103
+#: .\templates\incident\incident_list.html:77
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\administration\department_detail.html:62
+#: .\templates\administration\position_detail.html:68
+msgid "Delete"
+msgstr "Удалено"
+
+#: .\templates\administration\department_detail.html:68
+#: .\templates\administration\department_detail.html:95
+#: .\templates\administration\position_detail.html:74
+#: .\templates\administration\position_detail.html:101
+msgid "Confirm action"
+msgstr "Подтвердите действие"
+
+#: .\templates\administration\department_detail.html:72
+#, python-format
+msgid "Are you sure you want to delete %(department)s?"
+msgstr "Вы уверены что хотите удалить %(department)s?"
+
+#: .\templates\administration\department_detail.html:80
+#: .\templates\administration\department_detail.html:109
+#: .\templates\administration\position_detail.html:86
+#: .\templates\administration\position_detail.html:115
+msgid "Yes, sure"
+msgstr "Да, уверен(-а)"
+
+#: .\templates\administration\department_detail.html:89
+#: .\templates\administration\position_detail.html:95
+msgid "Restore"
+msgstr "Восстановить"
+
+#: .\templates\administration\department_detail.html:99
+#, python-format
+msgid "Are you sure you want to restore %(department)s?"
+msgstr "Вы уверены что хотите восстановить %(department)s?"
+
+#: .\templates\administration\department_list.html:14
+#: .\templates\administration\department_list.html:62
+#: .\templates\administration\department_list.html:81
+msgid "Create a department"
+msgstr "Добавить департамент"
+
+#: .\templates\administration\department_list.html:26
+msgctxt "Мужской род"
+msgid "Is deleted"
+msgstr "Удален"
+
+#: .\templates\administration\department_list.html:27
+#: .\templates\administration\position_list.html:28
+#: .\templates\authentication\customuser_list.html:25
+msgid "Action"
+msgstr "Действие"
+
+#: .\templates\administration\department_list.html:50
+#: .\templates\administration\position_list.html:58
+#: .\templates\authentication\customuser_list.html:34
+msgid "View"
+msgstr "Просмотреть"
+
+#: .\templates\administration\department_list.html:60
+#: .\templates\administration\position_list.html:68
+#: .\templates\authentication\customuser_list.html:44
+#: .\templates\incident\incident_list.html:30
+msgid "Nothing here"
+msgstr "Тут пусто"
+
+#: .\templates\administration\position_detail.html:20
+msgid "No parent position"
+msgstr "Нет вышестоящей должности"
+
+#: .\templates\administration\position_detail.html:32
+#: .\templates\administration\position_list.html:26
+msgctxt "Женский род"
+msgid "Is active"
+msgstr "Активна"
+
+#: .\templates\administration\position_detail.html:38
+#: .\templates\administration\position_list.html:25
+msgid "Is head position"
+msgstr "Руководящая должность"
+
+#: .\templates\administration\position_detail.html:78
+#, python-format
+msgid "Are you sure you want to delete %(position)s?"
+msgstr "Вы уверены что хотите удалить %(position)s?"
+
+#: .\templates\administration\position_detail.html:105
+#, python-format
+msgid "Are you sure you want to restore %(position)s?"
+msgstr "Вы уверены что хотите восстановить %(position)s?"
+
+#: .\templates\administration\position_list.html:14
+#: .\templates\administration\position_list.html:70
+#: .\templates\administration\position_list.html:89
+msgid "Create a position"
+msgstr "Добавить должность"
+
+#: .\templates\administration\position_list.html:27
+msgctxt "Женский род"
+msgid "Is deleted"
+msgstr "Удалена"
+
+#: .\templates\authentication\customuser_list.html:14
+#: .\templates\authentication\customuser_list.html:46
+#: .\templates\authentication\customuser_list.html:65
+msgid "Create a user"
+msgstr "Добавить пользователя"
+
+#: .\templates\authentication\customuser_list.html:80
+#: .\templates\authentication\customuser_list.html:82
+#: .\templates\authentication\login.html:69
+#: .\templates\authentication\login.html:71
+msgid "Password"
+msgstr "Пароль"
+
+#: .\templates\authentication\customuser_list.html:82
+#: .\templates\authentication\login.html:71
+msgid "Enter password"
+msgstr "Введите пароль"
+
+#: .\templates\authentication\customuser_list.html:88
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
+
+#: .\templates\authentication\login.html:55
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\authentication\login.html:56
+msgid "Please, log in, to use AsakaBank ORM"
+msgstr "Чтобы использовать AsakaBank ORM, пожалуйста, войдите"
+
+#: .\templates\authentication\login.html:65
+msgid "Enter username"
+msgstr "Введите имя пользователя"
+
+#: .\templates\authentication\login.html:76
+msgid "Log in"
+msgstr "Войти"
+
+#: .\templates\incident\incident_list.html:15
+msgid "Search"
+msgstr "Поиск"
+
+#: .\templates\incident\incident_list.html:22
+#: .\templates\incident\incident_list.html:32
+#: .\templates\incident\incident_list.html:51
+msgid "Create an incident"
+msgstr "Добавить инцидент"
+
+#: .\templates\partials\base.html:54
+msgid "Close"
+msgstr "Закрыть"
+
+#: .\templates\partials\base.html:71
+msgid "Home page"
+msgstr "Домашняя страница"
+
+#: .\templates\partials\header.html:43
+msgid "Language"
+msgstr "Язык"
+
+#: .\templates\partials\header.html:62
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\templates\partials\header.html:64
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\partials\sidebar.html:14
+msgid "Incidents list"
+msgstr "Список инцидентов"
+
+#: .\templates\partials\sidebar.html:32
+msgid "Departments"
+msgstr "Департаменты"
+
+#: .\templates\partials\sidebar.html:37
+msgid "Positions"
+msgstr "Должности"

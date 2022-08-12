@@ -3,9 +3,10 @@ import os
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, pgettext_lazy
 from core import settings
 from rest_framework.authtoken.models import Token as AuthToken
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class MyUserManager(BaseUserManager):
@@ -33,51 +34,36 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __init__(self, *args, **kwargs):
         super(CustomUser, self).__init__(*args, **kwargs)
 
-    username = models.CharField(max_length=24, null=False, blank=False, unique=True)
-    email = models.EmailField(unique=True, default=None, null=True)
-    first_name = models.CharField(max_length=32, null=True, default=None)
-    last_name = models.CharField(max_length=32, null=True, default=None)
-    date_joined = models.DateField(null=True, default=None)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
+    username = models.CharField(max_length=32, null=False, blank=False, unique=True, verbose_name=_('Username'))
+    email = models.EmailField(unique=True, default=None, null=True, blank=True, verbose_name=_('Email'))
+    phone_number = PhoneNumberField(null=True, blank=True, default=None, verbose_name=_('Phone number'))
+    first_name = models.CharField(max_length=64, null=False, blank=False, verbose_name=_('First name'))
+    last_name = models.CharField(max_length=64, null=True, default=None, blank=True, verbose_name=_('Last name'))
+    middle_name = models.CharField(max_length=64, null=True, default=None, blank=True, verbose_name=_('Middle name'))
+    date_joined = models.DateField(null=True, default=None, blank=True, verbose_name=_('Date joined'))
+    is_active = models.BooleanField(default=True, verbose_name=_('is active'))
+    is_staff = models.BooleanField(default=False, verbose_name=_('is staff'))
+    is_deleted = models.BooleanField(verbose_name=pgettext_lazy('Мужской род', 'deleted'), default=False)
+    deleted_at = models.DateTimeField(verbose_name=_('deleted at'), null=True, default=None, blank=True)
 
     objects = MyUserManager()
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = []
-
-    def save(self, *args, **kwargs):
-        super(CustomUser, self).save(*args, **kwargs)
-    #
-    # def _user_has_module_perms(self, app_label):
-    #     """
-    #     A backend can raise `PermissionDenied` to short-circuit permission checking.
-    #     """
-    #     for backend in auth.get_backends():
-    #         if not hasattr(backend, "has_module_perms"):
-    #             continue
-    #         try:
-    #             if backend.has_module_perms(self, app_label):
-    #                 return True
-    #         except PermissionDenied:
-    #             return False
-    #     return False
-    #
-    # def has_module_perms(self, app_label):
-    #     """
-    #     Return True if the user has any permissions in the given app label.
-    #     Use similar logic as has_perm(), above.
-    #     """
-    #     # Active superusers have all permissions.
-    #     print(self, app_label)
-    #     if self.is_active and self.is_superuser:
-    #         return True
-    #
-    #     return self._user_has_module_perms(self, app_label)
+    REQUIRED_FIELDS = ['first_name', ]
 
     class Meta:
-        verbose_name = 'user'
-        verbose_name_plural = 'Users'
+        verbose_name = _('user')
+        verbose_name_plural = _('Users')
+
+    @property
+    def full_name(self):
+        full_name = self.first_name
+        if self.last_name is not None:
+            full_name = self.last_name + ' ' + full_name
+        if self.middle_name is not None:
+            full_name += ' ' + self.middle_name
+        return full_name
+    full_name.fget.short_description = _('Full name')
 
 
 class Token(AuthToken):

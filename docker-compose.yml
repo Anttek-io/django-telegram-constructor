@@ -18,13 +18,13 @@ services:
   web:
     build: .
     container_name: django_dtc
-    command: ./run_django.sh
+    entrypoint: ./entrypoint.sh
     volumes:
       - .:/code
     ports:
       - "8000:8000"
     environment:
-      - DJANGO_DEBUG='True'
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
     env_file:
       - ./.env
     depends_on:

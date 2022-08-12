@@ -1,4 +1,6 @@
+{% load i18n %}
 {% load static %}
+
 <header id="page-topbar">
     <div class="navbar-header">
         <div class="d-flex">
@@ -6,19 +8,19 @@
             <div class="navbar-brand-box">
                 <a href="{% url 'administration:index' %}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{% static "assets/images/logo.svg" %}" alt="" height="22">
+                        <img src="{% static "assets/images/logo.png" %}" alt="" height="32">
                     </span>
                     <span class="logo-lg">
-                        <img src="{% static "assets/images/logo-dark.png" %}" alt="" height="17">
+                        <img src="{% static "assets/images/logo-dark.png" %}" alt="" height="32">
                     </span>
                 </a>
 
                 <a href="{% url 'administration:index' %}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{% static "assets/images/logo-light.svg" %}" alt="" height="22">
+                        <img src="{% static "assets/images/logo.png" %}" alt="" height="32">
                     </span>
                     <span class="logo-lg">
-                        <img src="{% static "assets/images/logo-light.png" %}" alt="" height="19">
+                        <img src="{% static "assets/images/logo-light.png" %}" alt="" height="32">
                     </span>
                 </a>
             </div>
@@ -30,51 +32,36 @@
         </div>
 
         <div class="d-flex">
-
+            <form action="{% url 'set_language' %}" method="post" id="language_form" name="language_form">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.get_full_path }}" form="language_form" />
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img id="header-lang-img" src="{% static "assets/images/flags/us.jpg" %}" alt="Header Language" height="16">
+                    <i class="bx bx-world font-size-16"> {% translate 'Language' %}</i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
-                        <img src="{% static "assets/images/flags/us.jpg" %}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
-                        <img src="{% static "assets/images/flags/spain.jpg" %}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr">
-                        <img src="{% static "assets/images/flags/germany.jpg" %}" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it">
-                        <img src="{% static "assets/images/flags/italy.jpg" %}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
-                        <img src="{% static "assets/images/flags/russia.jpg" %}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                    </a>
+                    {% for language in languages %}
+                        <button class="dropdown-item notify-item language" type="submit" value="{{ language.code }}" form="language_form" name="language">
+                            <span class="align-middle">{{ language.name_local }}</span>
+                        </button>
+                    {% endfor %}
                 </div>
             </div>
+            </form>
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ user.username }}</span>
+                    <i class="bx bx-user font-size-16"> <span class="d-none d-xl-inline-block ms-1 font-size-16">{{ user.username }}</span></i>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
+                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">{% translate 'Profile' %}</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href={% url "admin:logout" %}><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                    <a class="dropdown-item text-danger" href={% url "authentication:logout" %}><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">{% translate 'Logout' %}</span></a>
                 </div>
             </div>
 

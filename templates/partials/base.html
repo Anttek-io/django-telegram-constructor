@@ -49,7 +49,10 @@
                 {% block messages %}
                 {% if messages %}
                     <ul class="messagelist">{% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|capfirst }}</li>
+                        <div class="alert alert-primary alert-dismissible fade show float-end" role="alert">
+                            {{ message|capfirst }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% translate 'Close' %}"></button>
+                        </div>
                     {% endfor %}</ul>
                 {% endif %}
                 {% endblock messages %}
@@ -65,7 +68,7 @@
                                     {% block page-title-right %}
                                         {% block breadcrumbs %}
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="{% url 'administration:index' %}">Главная</a></li>
+                                            <li class="breadcrumb-item"><a href="{% url 'administration:index' %}">{% translate 'Home page' %}</a></li>
                                             {% if title %}<li class="breadcrumb-item active">{{ title }}</li>{% endif %}
                                         </ol>
                                         {% endblock %}

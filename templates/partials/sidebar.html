@@ -4,22 +4,19 @@
     <div data-simplebar class="h-100">
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
-                {% if app_list %}
-                    {% for app in app_list %}
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-radio-circle-marked"></i><span>{{ app.name }}</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            {% for model in app.models %}
-                                <li><a href="{{ model.admin_url }}"><i class="bx bx-radio-circle"></i>{{ model.name }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% endfor %}
-                {% else %}
-                    <li>{% translate 'You don’t have permission to view or edit anything.' %}</li>
-                {% endif %}
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="mdi mdi-lightbulb-on"></i>
+                        <span> {% translate 'Administration' %}</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{% url 'authentication:users_list' %}">
+                                <i class="mdi mdi-human-greeting"></i>{% translate 'Users' %}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

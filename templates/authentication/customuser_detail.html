@@ -1,0 +1,55 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block page-content %}
+
+    <form id="user_detail_form" method="post">{% csrf_token %}
+
+    <div class="card">
+        <div class="card-body">
+
+            <div class="row mb-3">
+                <div class="col-lg-6">
+                    <label for="user_username">{% translate 'Username' %}</label>
+                    <input class="form-control" type="text" value="{{ customuser.username }}" name="username" id="user_username">
+                </div>
+                <div class="col-lg-6">
+                    <label for="user_first_name">{% translate 'First name' %}</label>
+                    <input class="form-control" type="text" value="{{ customuser.first_name }}" name="first_name" id="user_first_name">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-lg-start">
+                        <a href="{% url 'authentication:users_list' %}">
+                        <button type="button" class="btn btn-secondary waves-effect waves-light">
+                            {% translate 'Back' %}
+                        </button>
+                        </a>
+                    </div>
+                    <div class="float-lg-start ms-3">
+                        <button type="submit" class="btn btn-primary waves-effect waves-light" form="user_detail_form">
+                            {% translate 'Save' %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </form>
+
+{% endblock page-content %}
+
+{% block extrascript %}
+<script>
+    $('.select').select2()
+</script>
+{% endblock extrascript %}

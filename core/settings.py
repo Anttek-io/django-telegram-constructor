@@ -18,7 +18,6 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -28,8 +27,13 @@ SECRET_KEY = 'django-insecure-$@dgwp)5)%#ya@7=gvhp^7rqt(c1d=#i%n2q7j=eb*kt+s+nwu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', True)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = ()
+
+CSRF_TRUSTED_ORIGINS = []
 
 # Application definition
 
@@ -43,22 +47,27 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # 3rd-party apps
+    'corsheaders',
     'phonenumber_field',
+    'django_filters',
 
     # Local apps
     'authentication.apps.AuthenticationConfig',
     'administration.apps.AdministrationConfig',
-    'telegram_bot.apps.TelegramBotConfig',
+    'logger.apps.LoggerConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 AUTH_USER_MODEL = 'authentication.CustomUser'
@@ -70,10 +79,22 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'authentication.utils.ExpiringTokenAuthentication',
     ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
+    ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'rest_framework.filters.SearchFilter',
+        'django_filters.rest_framework.DjangoFilterBackend'
+    ],
 }
 
 REST_AUTH_TOKEN_CREATOR = "authentication.utils.custom_create_token"
-TOKEN_TTL = datetime.timedelta(hours=12)
+
+TOKEN_TTL = datetime.timedelta(hours=9)
+
+LOGIN_URL = "/auth/login/"
+
+LOGIN_REDIRECT_URL = "/"
 
 ROOT_URLCONF = 'core.urls'
 
@@ -95,14 +116,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600),
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3'),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -122,21 +141,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'en-us')
+LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'en')
 
 gettext = lambda s: s
 
 LANGUAGES = (
-    ('ru-ru', gettext('Russian')),
-    ('en-us', gettext('English')),
+    ('ru', gettext('Russian')),
+    ('en', gettext('English')),
 )
+
 USE_I18N = True
 
-LOCALE_PATHS = (BASE_DIR / 'locale/', )
+LOCALE_PATHS = (BASE_DIR / 'locale/',)
 
 USE_L10N = True
 
@@ -146,14 +165,19 @@ USE_TZ = True
 
 PHONENUMBER_DEFAULT_REGION = os.getenv('PHONENUMBER_DEFAULT_REGION', None)
 
+# Simplified static file serving.
+# https://pypi.org/project/whitenoise/
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / 'static'
+
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'templates/static'
 ]
 
 MEDIA_URL = 'media/'

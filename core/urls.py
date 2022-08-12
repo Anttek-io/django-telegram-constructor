@@ -13,20 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from django.views.static import serve
 
-import administration.urls
-import authentication.urls
-from telegram_bot import urls as telegram_bot_urls
+from authentication.urls import api_urls as auth_api_urls, site_urls as auth_site_urls
+from administration.urls import api_urls as adm_api_urls, site_urls as adm_site_urls
 
 from core import settings
 
 urlpatterns = [
-    path('media/<path:str>', serve, {'document_root': settings.MEDIA_ROOT}),
-    path('', include((administration.urls, 'administration'), namespace='administration')),
-    path('api/auth/', include((authentication.urls, 'authentication'), namespace='authentication')),
+    path('', include((adm_site_urls, 'administration'), namespace='administration')),
+    path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
-    path('telegram_bot/', include(telegram_bot_urls)),
+    path('auth/', include((auth_site_urls, 'authentication'), namespace='authentication')),
+
+    path('api/adm/', include(adm_api_urls)),
+    path('api/auth/', include(auth_api_urls)),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
