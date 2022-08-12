@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-09 14:02+0500\n"
+"POT-Creation-Date: 2022-08-12 18:18+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,125 +20,9 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\administration\apps.py:8 .\templates\partials\sidebar.html:22
+#: .\administration\apps.py:8 .\templates\partials\sidebar.html:10
 msgid "Administration"
 msgstr "Администрирование"
-
-#: .\administration\models.py:9 .\administration\models.py:29
-#: .\templates\administration\department_detail.html:14
-#: .\templates\administration\department_list.html:23
-#: .\templates\administration\department_list.html:88
-#: .\templates\administration\position_detail.html:14
-#: .\templates\administration\position_list.html:23
-#: .\templates\administration\position_list.html:96
-msgid "Name"
-msgstr "Название"
-
-#: .\administration\models.py:11
-#: .\templates\administration\department_detail.html:18
-#: .\templates\administration\department_list.html:24
-msgid "Parent department"
-msgstr "Вышестоящий департамент"
-
-#: .\administration\models.py:14 .\authentication\models.py:44
-msgid "is active"
-msgstr "активен"
-
-#: .\administration\models.py:15 .\administration\models.py:35
-#: .\administration\models.py:60
-msgid "created at"
-msgstr "дата и время создания"
-
-#: .\administration\models.py:16 .\administration\models.py:36
-#: .\administration\models.py:61
-msgid "updated at"
-msgstr "последнее изменение"
-
-#: .\administration\models.py:17
-msgid "deleted"
-msgstr "удален"
-
-#: .\administration\models.py:18 .\administration\models.py:38
-#: .\authentication\models.py:47
-msgid "deleted at"
-msgstr "дата и время удаления"
-
-#: .\administration\models.py:21
-msgid "department"
-msgstr "департамент"
-
-#: .\administration\models.py:22
-msgid "departments"
-msgstr "департаменты"
-
-#: .\administration\models.py:31
-#: .\templates\administration\position_detail.html:18
-#: .\templates\administration\position_list.html:24
-msgid "Parent position"
-msgstr "Вышестоящая должность"
-
-#: .\administration\models.py:32
-msgid "is head position"
-msgstr "Руководящая должность"
-
-#: .\administration\models.py:34
-msgctxt "Женский род"
-msgid "is active"
-msgstr "активна"
-
-#: .\administration\models.py:37
-msgctxt "Женский род"
-msgid "deleted"
-msgstr "удалена"
-
-#: .\administration\models.py:41
-msgid "position"
-msgstr "должность"
-
-#: .\administration\models.py:42
-msgid "positions"
-msgstr "должности"
-
-#: .\administration\models.py:49 .\authentication\models.py:73
-msgid "User"
-msgstr "Пользователь"
-
-#: .\administration\models.py:51
-msgid "Department"
-msgstr "Департамент"
-
-#: .\administration\models.py:53
-msgid "Position"
-msgstr "Должность"
-
-#: .\administration\models.py:55
-msgid "is head"
-msgstr "руководящая должность"
-
-#: .\administration\models.py:56
-msgid "assigned by"
-msgstr "кто назначил"
-
-#: .\administration\models.py:59
-msgctxt "средний род"
-msgid "is active"
-msgstr "активно"
-
-#: .\administration\models.py:64
-msgid "employment"
-msgstr "занятость на должности"
-
-#: .\administration\models.py:65
-msgid "employments"
-msgstr "занятости на должностях"
-
-#: .\administration\views\site_views.py:65
-msgid "Department details"
-msgstr "Детали департамента"
-
-#: .\administration\views\site_views.py:162
-msgid "Position details"
-msgstr "Детали должности"
 
 #: .\authentication\admin.py:17
 msgid "Personal info"
@@ -156,7 +40,7 @@ msgstr "Важные даты"
 msgid "Authentication"
 msgstr "Аутентификация"
 
-#: .\authentication\models.py:37
+#: .\authentication\models.py:37 .\telegram_bot\models.py:8
 #: .\templates\authentication\customuser_detail.html:14
 #: .\templates\authentication\customuser_list.html:23
 #: .\templates\authentication\customuser_list.html:72
@@ -169,11 +53,11 @@ msgstr "Имя пользователя"
 msgid "Email"
 msgstr "Почта"
 
-#: .\authentication\models.py:39
+#: .\authentication\models.py:39 .\telegram_bot\models.py:12
 msgid "Phone number"
 msgstr "Номер телефона"
 
-#: .\authentication\models.py:40
+#: .\authentication\models.py:40 .\telegram_bot\models.py:9
 #: .\templates\authentication\customuser_detail.html:18
 #: .\templates\authentication\customuser_list.html:24
 #: .\templates\authentication\customuser_list.html:76
@@ -181,7 +65,7 @@ msgstr "Номер телефона"
 msgid "First name"
 msgstr "Имя"
 
-#: .\authentication\models.py:41
+#: .\authentication\models.py:41 .\telegram_bot\models.py:10
 msgid "Last name"
 msgstr "Фамилия"
 
@@ -193,6 +77,10 @@ msgstr "Отчество"
 msgid "Date joined"
 msgstr "Дата присоединения"
 
+#: .\authentication\models.py:44
+msgid "is active"
+msgstr "активен"
+
 #: .\authentication\models.py:45
 msgid "is staff"
 msgstr "пользователь админки"
@@ -202,11 +90,17 @@ msgctxt "Мужской род"
 msgid "deleted"
 msgstr "удален"
 
+#: .\authentication\models.py:47
+msgid "deleted at"
+msgstr "дата и время удаления"
+
 #: .\authentication\models.py:55 .\logger\models.py:42
+#: .\telegram_bot\models.py:23
 msgid "user"
 msgstr "пользователь"
 
-#: .\authentication\models.py:56 .\templates\partials\sidebar.html:27
+#: .\authentication\models.py:56 .\telegram_bot\models.py:24
+#: .\templates\partials\sidebar.html:15
 msgid "Users"
 msgstr "Пользователи"
 
@@ -217,6 +111,10 @@ msgstr "ФИО"
 #: .\authentication\models.py:70
 msgid "Key"
 msgstr "Ключ"
+
+#: .\authentication\models.py:73
+msgid "User"
+msgstr "Пользователь"
 
 #: .\authentication\models.py:75
 msgid "Created"
@@ -246,105 +144,13 @@ msgstr "Неверный логин или пароль"
 msgid "User details"
 msgstr "Детали пользователя"
 
-#: .\core\settings.py:154
+#: .\core\settings.py:152
 msgid "Russian"
 msgstr "Русский"
 
-#: .\core\settings.py:155
+#: .\core\settings.py:153
 msgid "English"
 msgstr "English"
-
-#: .\incident\apps.py:8 .\incident\models.py:48
-msgid "Incident"
-msgstr "Инцидент"
-
-#: .\incident\models.py:9
-msgid "Internal"
-msgstr "Внутренний"
-
-#: .\incident\models.py:10
-msgid "External"
-msgstr "Внешний"
-
-#: .\incident\models.py:14
-msgid "Template"
-msgstr "Черновик"
-
-#: .\incident\models.py:15
-msgid "Closed"
-msgstr "Закрыт"
-
-#: .\incident\models.py:18
-msgid "Title"
-msgstr "Заголовок"
-
-#: .\incident\models.py:20
-msgid "Incident type"
-msgstr "Тип инцидента"
-
-#: .\incident\models.py:21
-msgid "Description"
-msgstr "Описание"
-
-#: .\incident\models.py:22
-msgid "Discovery date"
-msgstr "Дата выявления"
-
-#: .\incident\models.py:23
-msgid "Occurrence date"
-msgstr "Дата возникновения"
-
-#: .\incident\models.py:24
-msgid "Initial damage"
-msgstr "Первоначальный ущерб"
-
-#: .\incident\models.py:25
-msgid "Residual damage"
-msgstr "Остаточный ущерб"
-
-#: .\incident\models.py:26
-msgid "Reparations amount"
-msgstr "Сумма возмещений"
-
-#: .\incident\models.py:29
-msgid "Source department"
-msgstr "Подразделение источник"
-
-#: .\incident\models.py:31
-msgid "Source initiator"
-msgstr "Инициатор"
-
-#: .\incident\models.py:33
-msgid "Author"
-msgstr "Автор"
-
-#: .\incident\models.py:36
-msgid "The department where the incident occurred"
-msgstr "Подразделение, в котором произошел инцидент"
-
-#: .\incident\models.py:38
-msgid "Created at"
-msgstr "Дата и время создания"
-
-#: .\incident\models.py:39
-msgid "Updated at"
-msgstr "Последнее изменение"
-
-#: .\incident\models.py:40
-msgid "Deleted"
-msgstr "Удалено"
-
-#: .\incident\models.py:41
-msgid "Deleted at"
-msgstr "Дата и время удаления"
-
-#: .\incident\models.py:44
-msgid "incident"
-msgstr "инцидент"
-
-#: .\incident\models.py:45 .\templates\partials\sidebar.html:10
-msgid "Incidents"
-msgstr "Инциденты"
 
 #: .\logger\apps.py:8
 msgid "Logging"
@@ -409,145 +215,65 @@ msgstr "Удален объект “%(object)s.”"
 msgid "LogEntry Object"
 msgstr "Объект LogEntry"
 
-#: .\templates\administration\department_detail.html:20
-msgid "No parent department"
-msgstr "Нет вышестоящего департамента"
+#: .\logger\models.py:98
+msgid "changed field"
+msgstr "измененное поле"
 
-#: .\templates\administration\department_detail.html:32
-#: .\templates\administration\department_list.html:25
-msgctxt "Мужской род"
-msgid "Is active"
-msgstr "Активен"
+#: .\logger\models.py:99
+msgid "changed fields"
+msgstr "измененные поля"
 
-#: .\templates\administration\department_detail.html:49
-#: .\templates\administration\department_detail.html:76
-#: .\templates\administration\department_detail.html:103
-#: .\templates\administration\department_list.html:98
-#: .\templates\administration\position_detail.html:55
-#: .\templates\administration\position_detail.html:82
-#: .\templates\administration\position_detail.html:109
-#: .\templates\administration\position_list.html:106
+#: .\telegram_bot\models.py:11
+msgid "Bio"
+msgstr "Био"
+
+#: .\telegram_bot\models.py:13
+msgid "Language code"
+msgstr "Код языка"
+
+#: .\telegram_bot\models.py:16
+msgid "is blocked bot"
+msgstr "Заблокировал бота"
+
+#: .\telegram_bot\models.py:17
+msgid "is banned"
+msgstr "Забанен"
+
+#: .\telegram_bot\models.py:19
+msgid "Created at"
+msgstr "Дата и время создания"
+
+#: .\telegram_bot\models.py:20
+msgid "Updated at"
+msgstr "Последнее изменение"
+
 #: .\templates\authentication\customuser_detail.html:33
 #: .\templates\authentication\customuser_list.html:98
-#: .\templates\incident\incident_list.html:72
 msgid "Back"
 msgstr "Назад"
 
-#: .\templates\administration\department_detail.html:55
-#: .\templates\administration\department_list.html:103
-#: .\templates\administration\position_detail.html:61
-#: .\templates\administration\position_list.html:111
 #: .\templates\authentication\customuser_detail.html:39
 #: .\templates\authentication\customuser_list.html:103
-#: .\templates\incident\incident_list.html:77
 msgid "Save"
 msgstr "Сохранить"
-
-#: .\templates\administration\department_detail.html:62
-#: .\templates\administration\position_detail.html:68
-msgid "Delete"
-msgstr "Удалено"
-
-#: .\templates\administration\department_detail.html:68
-#: .\templates\administration\department_detail.html:95
-#: .\templates\administration\position_detail.html:74
-#: .\templates\administration\position_detail.html:101
-msgid "Confirm action"
-msgstr "Подтвердите действие"
-
-#: .\templates\administration\department_detail.html:72
-#, python-format
-msgid "Are you sure you want to delete %(department)s?"
-msgstr "Вы уверены что хотите удалить %(department)s?"
-
-#: .\templates\administration\department_detail.html:80
-#: .\templates\administration\department_detail.html:109
-#: .\templates\administration\position_detail.html:86
-#: .\templates\administration\position_detail.html:115
-msgid "Yes, sure"
-msgstr "Да, уверен(-а)"
-
-#: .\templates\administration\department_detail.html:89
-#: .\templates\administration\position_detail.html:95
-msgid "Restore"
-msgstr "Восстановить"
-
-#: .\templates\administration\department_detail.html:99
-#, python-format
-msgid "Are you sure you want to restore %(department)s?"
-msgstr "Вы уверены что хотите восстановить %(department)s?"
-
-#: .\templates\administration\department_list.html:14
-#: .\templates\administration\department_list.html:62
-#: .\templates\administration\department_list.html:81
-msgid "Create a department"
-msgstr "Добавить департамент"
-
-#: .\templates\administration\department_list.html:26
-msgctxt "Мужской род"
-msgid "Is deleted"
-msgstr "Удален"
-
-#: .\templates\administration\department_list.html:27
-#: .\templates\administration\position_list.html:28
-#: .\templates\authentication\customuser_list.html:25
-msgid "Action"
-msgstr "Действие"
-
-#: .\templates\administration\department_list.html:50
-#: .\templates\administration\position_list.html:58
-#: .\templates\authentication\customuser_list.html:34
-msgid "View"
-msgstr "Просмотреть"
-
-#: .\templates\administration\department_list.html:60
-#: .\templates\administration\position_list.html:68
-#: .\templates\authentication\customuser_list.html:44
-#: .\templates\incident\incident_list.html:30
-msgid "Nothing here"
-msgstr "Тут пусто"
-
-#: .\templates\administration\position_detail.html:20
-msgid "No parent position"
-msgstr "Нет вышестоящей должности"
-
-#: .\templates\administration\position_detail.html:32
-#: .\templates\administration\position_list.html:26
-msgctxt "Женский род"
-msgid "Is active"
-msgstr "Активна"
-
-#: .\templates\administration\position_detail.html:38
-#: .\templates\administration\position_list.html:25
-msgid "Is head position"
-msgstr "Руководящая должность"
-
-#: .\templates\administration\position_detail.html:78
-#, python-format
-msgid "Are you sure you want to delete %(position)s?"
-msgstr "Вы уверены что хотите удалить %(position)s?"
-
-#: .\templates\administration\position_detail.html:105
-#, python-format
-msgid "Are you sure you want to restore %(position)s?"
-msgstr "Вы уверены что хотите восстановить %(position)s?"
-
-#: .\templates\administration\position_list.html:14
-#: .\templates\administration\position_list.html:70
-#: .\templates\administration\position_list.html:89
-msgid "Create a position"
-msgstr "Добавить должность"
-
-#: .\templates\administration\position_list.html:27
-msgctxt "Женский род"
-msgid "Is deleted"
-msgstr "Удалена"
 
 #: .\templates\authentication\customuser_list.html:14
 #: .\templates\authentication\customuser_list.html:46
 #: .\templates\authentication\customuser_list.html:65
 msgid "Create a user"
 msgstr "Добавить пользователя"
+
+#: .\templates\authentication\customuser_list.html:25
+msgid "Action"
+msgstr "Действие"
+
+#: .\templates\authentication\customuser_list.html:34
+msgid "View"
+msgstr "Просмотреть"
+
+#: .\templates\authentication\customuser_list.html:44
+msgid "Nothing here"
+msgstr "Тут пусто"
 
 #: .\templates\authentication\customuser_list.html:80
 #: .\templates\authentication\customuser_list.html:82
@@ -570,8 +296,8 @@ msgid "Welcome"
 msgstr "Добро пожаловать"
 
 #: .\templates\authentication\login.html:56
-msgid "Please, log in, to use AsakaBank ORM"
-msgstr "Чтобы использовать AsakaBank ORM, пожалуйста, войдите"
+msgid "Please, log in, to use DTC"
+msgstr "Чтобы использовать DTC, пожалуйста, войдите"
 
 #: .\templates\authentication\login.html:65
 msgid "Enter username"
@@ -580,16 +306,6 @@ msgstr "Введите имя пользователя"
 #: .\templates\authentication\login.html:76
 msgid "Log in"
 msgstr "Войти"
-
-#: .\templates\incident\incident_list.html:15
-msgid "Search"
-msgstr "Поиск"
-
-#: .\templates\incident\incident_list.html:22
-#: .\templates\incident\incident_list.html:32
-#: .\templates\incident\incident_list.html:51
-msgid "Create an incident"
-msgstr "Добавить инцидент"
 
 #: .\templates\partials\base.html:54
 msgid "Close"
@@ -610,15 +326,3 @@ msgstr "Профиль"
 #: .\templates\partials\header.html:64
 msgid "Logout"
 msgstr "Выйти"
-
-#: .\templates\partials\sidebar.html:14
-msgid "Incidents list"
-msgstr "Список инцидентов"
-
-#: .\templates\partials\sidebar.html:32
-msgid "Departments"
-msgstr "Департаменты"
-
-#: .\templates\partials\sidebar.html:37
-msgid "Positions"
-msgstr "Должности"
